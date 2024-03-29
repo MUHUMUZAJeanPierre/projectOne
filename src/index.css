@@ -1,0 +1,343 @@
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@500&family=Roboto:wght@400;500;700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@400;500;600;700&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active{
+  @apply text-blue-500 bg-slate-100
+}
+.btn{
+  @apply rounded-full py-2 px-3 uppercase text-xs font-bold cursor-pointer tracking-wider
+}
+
+.headingTwo{
+  @apply text-white sm:text-base lg:text-xl   font-bold mb-4
+} 
+ .anchorTag{
+  @apply text-white text-base   no-underline block transition-all duration-300 ease-in-out leading-6 text-ellipsis font-[10rem]
+}
+
+.bg-image {
+  background-image: url("./assets/electric.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.6) contrast(0.6);
+  position: absolute;
+  top: 0rem;
+  left: 0;
+  right: 0;
+  bottom: 0rem;
+  z-index: -1;
+   
+}
+
+
+.bg-image-1 {
+  background-image: url("./assets/img/manOnComp.jpg");
+  background-size: cover;
+  background-position: center;
+  /* filter: brightness(0.6); */
+  position: relative;
+  top: 0rem;
+  left: 0;
+  right: 0;
+  bottom: 0rem;
+  z-index: -1;
+  height: 100vh; 
+}
+
+.bg-image-2 {
+  background-image: url("./assets/img/crew.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.9);
+  top: 0rem;
+  left: 0;
+  right: 0;
+  bottom: 0rem;
+  z-index: -1;
+  height: 100vh;
+  background-repeat: no-repeat;
+}
+
+.bg-fabClass {
+  background-image: url("./assets/img/warehouse.jpg");
+  background-size: cover;
+  background-position: center bottom;
+   /* filter: brightness(0.6) contrast(1);  */
+
+  
+  left: 0;
+  right: 0;
+  bottom: 0rem;
+  z-index: -1;
+  
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .bg-image {
+    height: 50vh; /* Adjust the height for medium screens */
+  }
+  .bg-image-1 {
+    height: 50vh; /* Adjust the height for medium screens */
+  }
+}
+
+.custom-contrast{
+  filter: contrast(0.6);
+}
+
+.custom-brightness{
+  filter:brightness(0.2)
+}
+
+.parent {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(2, 0.8fr);
+grid-column-gap: 5px;
+grid-row-gap: 5px;
+}
+
+.child{
+  display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(1, 1fr);
+grid-column-gap: 5px;
+grid-row-gap: 10px;
+
+}
+.backgroundImage{
+  background-image: url("./assets/team.png");
+  width: 100%;
+  
+  
+}
+
+.overlay{
+  content: "";
+  display: block;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+   background: rgb(55, 97, 134,7);
+
+  filter: brightness(0.6), 
+
+}
+.mainFooter{
+  background-color: #173d6cff;
+}
+.backgroundImageGetQuote{
+  background-image: url(./assets/mettingChamber.jpg);
+  width: 100%;
+  height: 80vh;
+
+}
+
+@media (min-width: 320px) {
+  .parent {
+    display: flex;
+    flex-direction: column; /* Adjust the height for medium screens */
+  }
+  .bg-image-1 {
+    height: 80vh; /* Adjust the height for medium screens */
+    z-index: -1;
+
+  }
+     .child {
+    display: flex;
+    flex-direction: column; /* Adjust the height for medium screens */
+  }
+}
+
+
+/* slides css */
+
+
+.Carouselo{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:50vw !important; 
+  height: 25rem !important;
+}
+.slide{
+  width: 100%;
+  height: 100%;
+  margin: 0 3rem;
+
+}
+@media screen{
+  .slide{
+    width: 80%;
+    height: 60%;
+  }
+  
+}
+.slide-hidden{
+  display: none;
+}
+.arrow{
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  width: 2rem;
+  height: 2rem;
+  background-color: rgb(241, 241, 241);
+  color: white;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+}
+.arrow::after{
+  content: "";
+  width: .75rem;
+  height: .75rem;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg);
+}
+.arrow:hover{
+  cursor: pointer;
+}
+.indicators{
+  display: flex;
+  position: absolute;
+  bottom: 1rem;
+
+}
+.indicator{
+  background-color: white;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 100%;
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 5px #555;
+  margin: 0 0.2rem;
+  cursor: pointer;
+}
+.indicator-inactive{
+  background-color: grey;
+}
+.Carouselo img{
+  width: 10rem;
+  height: 10rem;
+  object-fit:contain;
+}
+.icon{
+  width: 30px;
+  height: 30px;
+  object-fit:contain;
+
+}
+
+.bg-eventRegister {
+  background-image: url("./assets/img/eventRegister.png");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.9) contrast(0.9);
+  left: 0;
+  right: 0;
+  bottom: 0rem;
+  z-index: -1;
+  height: 80vh;
+}
+
+.bg-bgProgram {
+  background-image: url("./assets/fabYout.jpg");
+  background-size: cover;
+  background-position: center;
+  /* filter: brightness(0.5) contrast(0.9); */
+  left: 0;
+  right: 0;
+  bottom: 0rem;
+  z-index:-1 ;
+  width: 100%;
+  height: 80vh;
+   
+  /* position: absolute; */
+  top: 0;
+}
+
+.bg-Events{
+  background-image: url("./assets/fabEvents.jpg");
+ 
+  background-size: cover;
+  background-position: bottom center;
+  
+
+  /* filter: brightness(0.5) contrast(0.95); */
+  left: 0;
+  right: 0;
+  bottom: 0rem;
+  z-index: -1;
+  
+
+}
+
+.fabPortfolio{
+  background-image: url("./assets/fabGallery.jpg");
+ 
+  background-size: cover;
+  background-position: center;
+  
+
+  /* filter: brightness(0.7) contrast(0.7); */
+
+  left: 0;
+  right: 0;
+  bottom: 0rem;
+  
+  
+
+}
+
+.bg-Machines{
+  background-image: url("./assets/showroom.jpg");
+ 
+  background-size: cover;
+  background-position: center;
+  
+  background-color: rgba(0, 0, 0, 0.3);
+  /* filter: brightness(0.8) contrast(0.7); */
+  
+
+  
+  left: 0;
+  right: 0;
+  bottom: 0rem;
+  z-index: -1;
+  
+
+}
+
+.navbar{
+  /* background-color: red; */
+}
+
+.navbar a{
+  /* background-color: blue; */
+  position:relative;
+  text-decoration: none;
+}
+.navbar a::after{
+  background-color: white;
+  content:"";
+  padding: 1px;
+  position:absolute;
+  width: 90%;
+  bottom:-5px;
+  left: 5px;
+display: none;
+}
+
+.navbar a:hover::after{
+  display: block;
+}
